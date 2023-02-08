@@ -4,6 +4,8 @@ spec:
     rules:
     - component:
         name: sample-dockerfile
+        preserve_path_prefix: true
+        rewrite: /bar
       match: 
         path:
           prefix: /foo
