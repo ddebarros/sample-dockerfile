@@ -2,22 +2,23 @@ spec:
   name: sample-dockerfile
   ingress:
     rules:
-    - component:
-        name: sample-dockerfile
-        preserve_path_prefix: false
-        rewrite: /bar
-      match: 
-        path:
-          prefix: /foo
-    - redirect: 
-      match:
-        path: 
-          prefix: '/test'
-      uri: google.com
+      - component:
+          name: sample-dockerfile
+          preserve_path_prefix: false
+          rewrite: /bar
+        match:
+          path:
+            prefix: /foo
+        
+      - redirect:
+          uri: google.com
+        match:
+          path:
+            prefix: "/test"
 
   services:
-  - dockerfile_path: Dockerfile
-    git:
-      branch: main
-      repo_clone_url: https://github.com/digitalocean/sample-dockerfile.git
-    name: sample-dockerfile
+    - dockerfile_path: Dockerfile
+      git:
+        branch: main
+        repo_clone_url: https://github.com/digitalocean/sample-dockerfile.git
+      name: sample-dockerfile
