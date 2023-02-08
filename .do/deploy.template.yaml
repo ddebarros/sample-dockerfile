@@ -9,7 +9,7 @@ spec:
         match:
           path:
             prefix: /foo
-        
+
       - redirect:
           uri: /
           authority: google.com
@@ -24,4 +24,4 @@ spec:
         repo_clone_url: https://github.com/digitalocean/sample-dockerfile.git
       name: sample-dockerfile
       routes:
-        path: '/'
+        - path: /
