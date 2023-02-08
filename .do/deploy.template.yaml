@@ -1,5 +1,12 @@
 spec:
   name: sample-dockerfile
+  ingress:
+    rules:
+    - component:
+        name: sample-dockerfile
+      match: 
+        path:
+          prefix: /foo
   services:
   - dockerfile_path: Dockerfile
     git:
