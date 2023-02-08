@@ -9,6 +9,12 @@ spec:
       match: 
         path:
           prefix: /foo
+    - redirect: 
+      match:
+        path: 
+          prefix: '/test'
+      uri: google.com
+
   services:
   - dockerfile_path: Dockerfile
     git:
