@@ -11,7 +11,8 @@ spec:
             prefix: /foo
         
       - redirect:
-          uri: google.com
+          uri: /
+          authority: google.com
         match:
           path:
             prefix: "/test"
